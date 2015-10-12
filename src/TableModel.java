@@ -54,7 +54,7 @@ public class TableModel extends AbstractTableModel
     }
 
     /**
-     * Gibt Wert eine Zelle aus
+     * Gibt Wert eine Zeile aus
      *
      * @param row Zahl der Reihe
      * @param col Zahl der Spalte
@@ -62,52 +62,58 @@ public class TableModel extends AbstractTableModel
      * @return Object
      */
     public Object getValueAt(int row, int col) {
-        Adresse adresse = (Adresse) list.get(row);
+        Kontakt kontakt = (Kontakt) list.get(row);
 
         switch (col) {
             case 0:
-                return adresse.getName();
+                return kontakt.getName();
+            case 1:
+                return kontakt.getVorname();
+            case 2:
+                return kontakt.getTelefonnr();
+            case 3:
+                return kontakt.getAdresse();
             default:
                 return null;
         }
     }
-
-    /**
+/*
+    *//**
      * Fügt Adresse in die Tabelle ein
      *
-     * @param e Benutzer der hinzugefügt werden soll
-     */
+     * @param a Benutzer der hinzugefügt werden soll
+     *//*
     public void addAdresse(Adresse a) {
         list.add(a);
         fireTableDataChanged();
     }
 
-    /**
-     * Fügt eine gesamte Liste an Übungen der Tabelle hinzu
+    *//**
+     * Fügt eine gesamte Liste der Tabelle hinzu
      *
      * @param l List mit den hinzuzufügenden Usern
-     */
+     *//*
     public void addList(List l) {
         list.addAll(l);
         fireTableDataChanged();
     }
 
-    /**
-     * Gibt Exercise-Objekt einer Reihe aus
+    *//**
+     * Gibt Objekte einer Reihe aus
      *
      * @param row Zahl der Reihe
      * @return Exercise
-     */
+     *//*
     public Adresse getAdresseat(int row) {
         return (Adresse) list.get(row);
     }
 
-    /**
-     * Löscht Exercise-Objekt einer Reihe
+    *//**
+     * Löscht Objekt einer Reihe
      *
      * @param row Zahl der Reihe
      * @return User
-     */
+     *//*
     public Adresse removeAdresseAt(int row) {
         try {
             return (Adresse) list.remove(row);
@@ -115,5 +121,5 @@ public class TableModel extends AbstractTableModel
         finally {
             fireTableDataChanged();
         }
-    }
+    }*/
 }
