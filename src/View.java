@@ -93,18 +93,12 @@ public class View extends Empfaenger {
         contentPane.add(reg);
 
         contentPane.add(new JLabel(" "));
-        contentPane.add(new JLabel("Bitte merken Sie sich Ihre ID und Ihr Passwort für den nächsten Login."));
 
-        JButton weiter = new JButton("Weiter");
+        JButton weiter = new JButton("Abbrechen");
         weiter.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if (registriert == true) {
-                    Reservierungssystem();
+
                     fenster.dispose();
-                } else {
-                    nutzerAnlegen();
-                    fenster.dispose();
-                }
 
             }
         });
