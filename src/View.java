@@ -13,9 +13,9 @@ public class View extends Empfaenger {
     private JTable table;
     private Adressbuch adressbuch;
 
-    public View(Adressbuch adressBuch){
-        this.adressbuch = adressBuch;
-        tableModel = new TableModel(this.adressbuch.getKontaktliste());
+    public View(Adressbuch adressbuch){
+        this.adressbuch = adressbuch;
+        tableModel = this.adressbuch.getKontaktliste();
         table = new JTable(tableModel);
     }
 
@@ -34,11 +34,11 @@ public class View extends Empfaenger {
         JTextField sucheTextField = new JTextField("");
         contentPane.add(sucheTextField, BorderLayout.NORTH);
 
-        JButton suchButton = new JButton("Suche");
-        contentPane.add(suchButton, BorderLayout.NORTH);
+        JButton sucheButton = new JButton("Suche");
+        contentPane.add(sucheButton, BorderLayout.NORTH);
 
-        contentPane.add(new JLabel("Suche"), BorderLayout.NORTH);
-        JTextField suche = new JTextField("");
+
+
 
 
         JScrollPane scrollPane = new JScrollPane(table);
