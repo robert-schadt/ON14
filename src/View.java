@@ -11,11 +11,11 @@ public class View extends Empfaenger {
 
     private TableModel tableModel;
     private JTable table;
-    private Model model;
+    private Adressbuch adressbuch;
 
-    public View(Model model){
-        this.model = model;
-        tableModel = model.getAdressListe(); //TODO
+    public View(Adressbuch adressbuch){
+        this.adressbuch = adressbuch;
+        tableModel = this.adressbuch.getKontaktliste();
         table = new JTable(tableModel);
     }
 
