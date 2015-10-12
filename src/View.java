@@ -2,27 +2,28 @@
  * Created by Thomas on 12.10.2015.
  */
 
+
+
 public class View extends Empfaenger {
 
+    private model Model;
 
-    //Hauptfenster
-    public void erzeugeHauptfenster(){
-        JFrame fenster = new JFrame("Willkommen");
+    public View(model Model){
+        this.model = model;
+        model.aktualisiere();
 
-        //Damit das Fenster nicht mehr oben links in der Ecke aufgeht, sondern zentral auf dem Bildschirm
-        fenster.setSize(800, 800);
-        fenster.setLocationRelativeTo(null);
+    }
 
-        JPanel contentPane = (JPanel) fenster.getContentPane();
-        contentPane.setLayout(new BorderLayout());
-        contentPane.setBorder(new EmptyBorder(50, 50, 50, 50));
+    //Erzeugen der Oberfl�che im View
+
+    public void aktualisiere(){
+
+
 
 
     }
 
-
-
-    // Anlegen eines neuen Nutzers. User-ID wird aus dem Vornamen, Nachnamen und Nummer generiert
+    // Anlegen eines neuen Kontaktes. User-ID wird aus dem Vornamen, Nachnamen und Nummer generiert
     public void nutzerAnlegen() {
         JFrame fenster = new JFrame("Bitte legen Sie einen neuen Kontakt an");
         fenster.setSize(220, 400);
@@ -73,12 +74,18 @@ public class View extends Empfaenger {
         contentPane.add(reg);
 
         contentPane.add(new JLabel(" "));
+        contentPane.add(new JLabel("Bitte merken Sie sich Ihre ID und Ihr Passwort für den nächsten Login."));
 
-        JButton weiter = new JButton("Abbrechen");
+        JButton weiter = new JButton("Weiter");
         weiter.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                if (registriert == true) {
+                    Reservierungssystem();
                     fenster.dispose();
+                } else {
+                    nutzerAnlegen();
+                    fenster.dispose();
+                }
 
             }
         });
@@ -141,7 +148,7 @@ public class View extends Empfaenger {
 
     // Rückmeldung für erfolgreiche Aktionen
     public void bestaetigung() {
-        JFrame fenster = new JFrame("Die Aktion war erfolgreich");
+        JFrame fenster = new JFrame("Die Reservierung war erfolgreich");
         fenster.setSize(220, 400);
         fenster.setLocationRelativeTo(null);
 
