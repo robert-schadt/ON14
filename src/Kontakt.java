@@ -1,7 +1,7 @@
 /**
  * Created by LickertE on 12.10.2015.
  */
-public class Kontakt extends Sender {
+public class Kontakt {
     private String name;
     private String vorname;
     private String telefonnr;
