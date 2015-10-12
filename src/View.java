@@ -83,7 +83,7 @@ public class View extends Empfaenger {
         tableModel.fireTableDataChanged();
     }
 
-// Anlegen eines neuen Kontaktes. User-ID wird aus dem Vornamen, Nachnamen und Nummer generiert
+    // Anlegen eines neuen Kontaktes. User-ID wird aus dem Vornamen, Nachnamen und Nummer generiert
     public void kontaktAnlegen() {
         JFrame fenster2 = new JFrame("Bitte legen Sie einen neuen Kontakt an");
         fenster2.setSize(220, 400);
@@ -139,7 +139,7 @@ public class View extends Empfaenger {
         weiter.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
-                    fenster2.dispose();
+                fenster2.dispose();
 
             }
         });
@@ -200,7 +200,7 @@ public class View extends Empfaenger {
     }*/
 
 
-//  Rückmeldung für erfolgreiche Aktionen
+    //  Rückmeldung für erfolgreiche Aktionen
     public void bestaetigung() {
         JFrame fenster3 = new JFrame("Die Aktion war erfolgreich");
         fenster3.setSize(220, 400);
