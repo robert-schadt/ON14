@@ -7,6 +7,13 @@ public class Kontakt {
     private String telefonnr;
     private Adresse adresse;
 
+public Kontakt(String name, String vorname, String telefonnr, String strasse, int hausnr, String postleitzahl, String ort) {
+    this.name = name;
+    this.vorname = vorname;
+    this.telefonnr = telefonnr;
+    this.adresse = new Adresse(strasse, hausnr, postleitzahl, ort);
+    }
+
     public String getName() {
         return name;
     }
