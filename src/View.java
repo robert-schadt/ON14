@@ -1,6 +1,8 @@
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by Thomas on 12.10.2015.
@@ -24,7 +26,7 @@ public class View extends Empfaenger {
         JFrame fenster = new JFrame("Willkommen");
 
         //Damit das Fenster nicht mehr oben links in der Ecke aufgeht, sondern zentral auf dem Bildschirm
-        fenster.setPreferredSize(new Dimension(800,800));
+        fenster.setPreferredSize(new Dimension(800, 800));
         fenster.setLocationRelativeTo(null);
 
         JPanel contentPane = (JPanel) fenster.getContentPane();
@@ -33,6 +35,15 @@ public class View extends Empfaenger {
 
         contentPane.add(new JLabel("Suche"), BorderLayout.NORTH);
         JTextField nachn = new JTextField("");
+        JButton sucheButton = new JButton();
+        contentPane.add(sucheButton,BorderLayout.NORTH);
+        sucheButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+
+            }
+        });
 
         JScrollPane scrollPane = new JScrollPane(table);
 
