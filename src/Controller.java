@@ -14,6 +14,7 @@ public class Controller {
 
     public void addKontakt(Kontakt kontakt) {
         repository.addKontakte(kontakt);
+        aktualisiereAdressbuch();
     }
 
     public ArrayList<Kontakt> sucheKontaktPerNachname (String name) {
@@ -31,5 +32,4 @@ public class Controller {
     public void aktualisiereAdressbuch() {
         adressbuch.aktualisiereKontaktliste(repository.getKontaktListe());
     }
-
 }

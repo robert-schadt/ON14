@@ -13,11 +13,13 @@ public class Adressbuch extends Sender {
         return kontaktliste;
     }
 
-    public void addKontakt(Kontakt kontakt) {
-        kontaktliste.add(kontakt);
-    }
+    /* public void addKontakt(Kontakt kontakt) {
+       kontaktliste.add(kontakt);
+        senden();
+    } */
 
     public void aktualisiereKontaktliste (ArrayList<Kontakt> neueKontaktliste) {
         kontaktliste = neueKontaktliste;
+        senden();
     }
 }
