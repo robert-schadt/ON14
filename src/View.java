@@ -14,16 +14,20 @@ public class View extends Empfaenger {
     private TableModel tableModel;
     private JTable table;
     private Adressbuch adressbuch;
+    private Controller controller;
+    private JFrame fenster = new JFrame("Willkommen");
 
-    public View(Adressbuch adressBuch){
+    public View(Adressbuch adressBuch, Controller controller){
         this.adressbuch = adressBuch;
+        this.controller = controller;
         tableModel = new TableModel(adressbuch.getKontaktliste());
         table = new JTable(tableModel);
+        erzeugeHauptfenster();
     }
 
     //Hauptfenster
     public void erzeugeHauptfenster(){
-        JFrame fenster = new JFrame("Willkommen");
+
 
         //Damit das Fenster nicht mehr oben links in der Ecke aufgeht, sondern zentral auf dem Bildschirm
         fenster.setPreferredSize(new Dimension(800, 800));
@@ -43,6 +47,7 @@ public class View extends Empfaenger {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                controller.sucheKontaktPerNachname("Inahlt von textfeld");
             }
         });
 
