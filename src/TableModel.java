@@ -9,7 +9,7 @@ public class TableModel extends AbstractTableModel
 {
     //Datenfelder
     private List list;
-    private String[] columns = { "Vorname", "Name", "Telefonnummer" };
+    private String[] columns = { "Name", "Vorname", "Telefonnummer", "Adresse" };
 
     /**
      * Konstruktor zum Überschreiben des Standard-Konstruktors

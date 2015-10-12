@@ -16,4 +16,8 @@ public class Adressbuch extends Sender {
     public void addKontakt(Kontakt kontakt) {
         kontaktliste.add(kontakt);
     }
+
+    public void aktualisiereKontaktliste (ArrayList<Kontakt> neueKontaktliste) {
+        kontaktliste = neueKontaktliste;
+    }
 }
