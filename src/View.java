@@ -31,6 +31,9 @@ public class View extends Empfaenger {
         contentPane.setLayout(new BorderLayout());
         contentPane.setBorder(new EmptyBorder(50, 50, 50, 50));
 
+        contentPane.add(new JLabel("Suche"), BorderLayout.NORTH);
+        JTextField nachn = new JTextField("");
+
         JScrollPane scrollPane = new JScrollPane(table);
 
         fenster.add(scrollPane, BorderLayout.CENTER);
