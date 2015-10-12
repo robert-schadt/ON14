@@ -7,8 +7,8 @@ public class Controller {
     private Adressbuch adressbuch;
     private Repository repository;
 
-    public Controller () {
-        this.adressbuch = new Adressbuch();
+    public Controller (Adressbuch buch) {
+        this.adressbuch = buch;
         this.repository = new Repository();
     }
 

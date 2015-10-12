@@ -80,7 +80,9 @@ public class View extends Empfaenger {
     }
 
     public void aktualisiere(){
+        tableModel = new TableModel(adressbuch.getKontaktliste());
         tableModel.fireTableDataChanged();
+        table.setModel(tableModel);
     }
 
     // Anlegen eines neuen Kontaktes. User-ID wird aus dem Vornamen, Nachnamen und Nummer generiert
@@ -146,9 +148,9 @@ public class View extends Empfaenger {
 
         contentPane.add(weiter);
 
-        fenster.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        fenster.pack();
-        fenster.setVisible(true);
+        fenster2.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        fenster2.pack();
+        fenster2.setVisible(true);
 
     }
 

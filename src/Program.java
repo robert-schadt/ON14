@@ -10,9 +10,7 @@ public class Program {
         JFrame frame = new JFrame("TestView");
         Adressbuch model = new Adressbuch();
 
-        model.addKontakt(new Kontakt("Raphael", "Guttenberger", "91872398", "Bibiweg", 1, "12345", "Mosbach"));
-
-        Controller controller = new Controller();
+        Controller controller = new Controller(model);
         View testView = new View(model, controller);
         model.anmelden(testView);
         frame.setContentPane(testView.contentPane);
