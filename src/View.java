@@ -1,6 +1,8 @@
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by Thomas on 12.10.2015.
@@ -36,6 +38,13 @@ public class View extends Empfaenger {
 
         JButton sucheButton = new JButton("Suche");
         contentPane.add(sucheButton, BorderLayout.NORTH);
+
+        sucheButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
 
 
 
