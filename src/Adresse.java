@@ -7,6 +7,13 @@ public class Adresse {
     private String postleitzahl;
     private String ort;
 
+    public Adresse(String strasse, int hausnr, String postleitzahl, String ort) {
+        this.strasse = strasse;
+        this.hausnr = hausnr;
+        this.postleitzahl = postleitzahl;
+        this.ort = ort;
+    }
+
     public String getStrasse() {
         return strasse;
     }
