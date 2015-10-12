@@ -20,7 +20,7 @@ public class Repository {
             Kontakt gesuchterKontakt = it.next();
             gesuchterKontakt.getVorname() = new String gesuchterKontaktVorname;
             if (gesuchterKontaktVorname.equals(suche))
-                System.out.println(gesl);
+                System.out.println(ges);
         }
     }
 
