@@ -17,11 +17,11 @@ public class Controller {
     }
 
     public ArrayList<Kontakt> sucheKontaktPerNachname (String name) {
-        repository.getKontaktperNachname(name);
+        return repository.getKontaktperNachname(name);
     }
 
     public ArrayList<Kontakt> sucheKontaktPerVorname (String vorname) {
-        repository.getKontaktperVorname(vorname);
+        return repository.getKontaktperVorname(vorname);
     }
 
     public ArrayList<Kontakt> getKontaktliste () {
