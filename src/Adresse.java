@@ -45,4 +45,9 @@ public class Adresse {
     public void setOrt(String ort) {
         this.ort = ort;
     }
+
+    @Override
+    public String toString() {
+        return strasse + " " + hausnr + ", " + postleitzahl + " " + ort;
+    }
 }
