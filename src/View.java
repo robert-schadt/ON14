@@ -1,6 +1,8 @@
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by Thomas on 12.10.2015.
@@ -11,16 +13,13 @@ public class View extends Empfaenger {
 
     private TableModel tableModel;
     private JTable table;
-    private Model model;
+    private Adressbuch adressbuch;
 
-
-    public View(Model model){
-        this.model = model;
-        tableModel = model.getAdressListe(); //TODO
+    public View(Adressbuch adressbuch){
+        this.adressbuch = adressbuch;
+        tableModel = this.adressbuch.getKontaktliste();
         table = new JTable(tableModel);
     }
-
-
 
     //Hauptfenster
     public void erzeugeHauptfenster(){
@@ -34,8 +33,22 @@ public class View extends Empfaenger {
         contentPane.setLayout(new BorderLayout());
         contentPane.setBorder(new EmptyBorder(50, 50, 50, 50));
 
-        contentPane.add(new JLabel("Suche"), BorderLayout.NORTH);
-        JTextField suche = new JTextField("");
+        JTextField sucheTextField = new JTextField("");
+        contentPane.add(sucheTextField, BorderLayout.NORTH);
+
+        JButton sucheButton = new JButton("Suche");
+        contentPane.add(sucheButton, BorderLayout.NORTH);
+
+        sucheButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+
+
+
 
         JScrollPane scrollPane = new JScrollPane(table);
 
