@@ -161,7 +161,7 @@ public class View extends Empfaenger {
 
     // Rückmeldung für erfolgreiche Aktionen
     public void bestaetigung() {
-        JFrame fenster = new JFrame("Die Reservierung war erfolgreich");
+        JFrame fenster = new JFrame("Die Aktion war erfolgreich");
         fenster.setSize(220, 400);
         fenster.setLocationRelativeTo(null);
 
