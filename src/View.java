@@ -4,43 +4,23 @@
 
 public class View extends Empfaenger {
 
-    //Der Nutzer kann sich hier einloggen oder neuanmelden. Nach der Auswahl erscheint ein neues Fenster
-    public void einloggen() {
+
+    //Hauptfenster
+    public void erzeugeHauptfenster(){
         JFrame fenster = new JFrame("Willkommen");
+
         //Damit das Fenster nicht mehr oben links in der Ecke aufgeht, sondern zentral auf dem Bildschirm
-        fenster.setSize(220, 400);
+        fenster.setSize(800, 800);
         fenster.setLocationRelativeTo(null);
 
         JPanel contentPane = (JPanel) fenster.getContentPane();
-        contentPane.setLayout(new GridLayout(0, 1));
+        contentPane.setLayout(new BorderLayout());
         contentPane.setBorder(new EmptyBorder(50, 50, 50, 50));
-        contentPane.add(new JLabel("Falls Sie schon einmal bei uns reserviert haben, klicken Sie bitte auf 'Registrierter Nutzer'."));
-        contentPane.add(new JLabel(" Andernfalls wählen Sie bitte 'Neuer Nutzer'."));
-        contentPane.add(new JLabel(" "));
 
-        JButton neu = new JButton("Registrieren");
-        neu.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                //nutzerAnlegen();
-                fenster.dispose();
-            }
-        });
-        contentPane.add(neu);
-
-        JButton login = new JButton("Einloggen");
-        login.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                //einloggen();
-                fenster.dispose();
-            }
-        });
-        contentPane.add(login);
-
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        fenster.pack();
-        fenster.setVisible(true);
 
     }
+
+
 
     // Anlegen eines neuen Nutzers. User-ID wird aus dem Vornamen, Nachnamen und Nummer generiert
     public void nutzerAnlegen() {
