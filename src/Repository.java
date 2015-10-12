@@ -27,7 +27,7 @@ public class Repository {
         }
     }
 
-    public void getKontaktperNachname(String sucheName)
+    public ArrayList<Kontakt> getKontaktperNachname(String sucheName)
     {
         ArrayList<Kontakt> aktuellekontaktListe= new ArrayList<Kontakt>();
         for (Iterator<Kontakt> it = kontaktListe.iterator(); it.hasNext();) {
@@ -43,9 +43,11 @@ public class Repository {
 
     public ArrayList<Kontakt> getKontaktListe () {
 
+        ArrayList<Kontakt> aktuellekontaktListe= new ArrayList<Kontakt>();
         for (Iterator<Kontakt> it = kontaktListe.iterator(); it.hasNext();) {
             Kontakt gesuchterKontakt = it.next();
-                System.out.println(gesuchterKontakt.getKontakt());
+            aktuellekontaktListe.add(gesuchterKontakt);
         }
+        return aktuellekontaktListe;
     }
 }
