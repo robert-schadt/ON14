@@ -12,33 +12,42 @@ public class Repository {
     public void addKontakte(Kontakt newKontakt)
     {
         kontaktListe.add(newKontakt);
-        System.out.println("Der Kontakt " + newKontakt.getVorname() + ", " + newKontakt.getName() + " wurde erfolgreich hinzugefügt");
     }
 
-    public void getKontaktperVorname(String sucheVorname)
+    public ArrayList<Kontakt> getKontaktperVorname(String sucheVorname)
     {
+        ArrayList<Kontakt> aktuellekontaktListe= new ArrayList<Kontakt>();
         for (Iterator<Kontakt> it = kontaktListe.iterator(); it.hasNext();) {
             Kontakt gesuchterKontakt = it.next();
-            if (gesuchterKontakt.getVorname().equals(sucheVorname))
-                System.out.println(gesuchterKontakt.getKontakt());
+
+            if (gesuchterKontakt.getVorname().toLowerCase().startsWith(sucheVorname.toLowerCase()))
+            { aktuellekontaktListe.add(gesuchterKontakt);
+            }
+            return aktuellekontaktListe;
         }
     }
 
-    public void getKontaktperNachname(String sucheName)
+    public ArrayList<Kontakt> getKontaktperNachname(String sucheName)
     {
+        ArrayList<Kontakt> aktuellekontaktListe= new ArrayList<Kontakt>();
         for (Iterator<Kontakt> it = kontaktListe.iterator(); it.hasNext();) {
             Kontakt gesuchterKontakt = it.next();
-            if (gesuchterKontakt.getName().equals(sucheName))
-                System.out.println(gesuchterKontakt.getKontakt());
+
+            if (gesuchterKontakt.getVorname().toLowerCase().startsWith(sucheName.toLowerCase()))
+            { aktuellekontaktListe.add(gesuchterKontakt);
+            }
+            return aktuellekontaktListe;
         }
     }
 
 
     public ArrayList<Kontakt> getKontaktListe () {
 
+        ArrayList<Kontakt> aktuellekontaktListe= new ArrayList<Kontakt>();
         for (Iterator<Kontakt> it = kontaktListe.iterator(); it.hasNext();) {
             Kontakt gesuchterKontakt = it.next();
-                System.out.println(gesuchterKontakt.getKontakt());
+            aktuellekontaktListe.add(gesuchterKontakt);
         }
+        return aktuellekontaktListe;
     }
 }

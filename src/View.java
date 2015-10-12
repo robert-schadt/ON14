@@ -2,28 +2,30 @@
  * Created by Thomas on 12.10.2015.
  */
 
-
-
 public class View extends Empfaenger {
 
-    private model Model;
 
-    public View(model Model){
-        this.model = model;
-        model.aktualisiere();
+    //Hauptfenster
+    public void erzeugeHauptfenster(){
+        JFrame fenster = new JFrame("Willkommen");
+
+        //Damit das Fenster nicht mehr oben links in der Ecke aufgeht, sondern zentral auf dem Bildschirm
+        fenster.setSize(800, 800);
+        fenster.setLocationRelativeTo(null);
+
+        JPanel contentPane = (JPanel) fenster.getContentPane();
+        contentPane.setLayout(new BorderLayout());
+        contentPane.setBorder(new EmptyBorder(50, 50, 50, 50));
+
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        fenster.pack();
+        fenster.setVisible(true);
 
     }
 
-    //Erzeugen der Oberfl�che im View
-
-    public void aktualisiere(){
 
 
-
-
-    }
-
-    // Anlegen eines neuen Kontaktes. User-ID wird aus dem Vornamen, Nachnamen und Nummer generiert
+    // Anlegen eines neuen Nutzers. User-ID wird aus dem Vornamen, Nachnamen und Nummer generiert
     public void nutzerAnlegen() {
         JFrame fenster = new JFrame("Bitte legen Sie einen neuen Kontakt an");
         fenster.setSize(220, 400);
@@ -45,47 +47,38 @@ public class View extends Empfaenger {
         contentPane.add(tel);
 
         contentPane.add(new JLabel("Straße"));
-        JTextField tel = new JTextField("");
+        JTextField stra = new JTextField("");
         contentPane.add(stra);
 
         contentPane.add(new JLabel("Hausnummer"));
-        JTextField tel = new JTextField("");
-        contentPane.add(Hnr);
+        JTextField hnr = new JTextField("");
+        contentPane.add(hnr);
 
         contentPane.add(new JLabel("PLZ"));
-        JTextField tel = new JTextField("");
+        JTextField plz = new JTextField("");
         contentPane.add(plz;
 
         contentPane.add(new JLabel("Ort"));
-        JTextField tel = new JTextField("");
+        JTextField ort = new JTextField("");
         contentPane.add(ort);
 
 
         JButton reg = new JButton("Speichern");
         reg.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                gespeichert = true;
-                id.setText("Der Kontakt wurde angelegt:  " + vorn + " " + nachn);
-                pw.setForeground(Color.blue);
-                id.setForeground(Color.blue);
+                //Adresse + Kontakt anlegen
 
             }
         });
         contentPane.add(reg);
 
         contentPane.add(new JLabel(" "));
-        contentPane.add(new JLabel("Bitte merken Sie sich Ihre ID und Ihr Passwort für den nächsten Login."));
 
-        JButton weiter = new JButton("Weiter");
+        JButton weiter = new JButton("Abbrechen");
         weiter.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if (registriert == true) {
-                    Reservierungssystem();
+
                     fenster.dispose();
-                } else {
-                    nutzerAnlegen();
-                    fenster.dispose();
-                }
 
             }
         });
@@ -128,7 +121,7 @@ public class View extends Empfaenger {
 
                 if (passwort == true) {
                     fenster.dispose();
-                    Reservierungssystem();
+
 
                 } else {
                     fenster.dispose();
@@ -148,7 +141,7 @@ public class View extends Empfaenger {
 
     // Rückmeldung für erfolgreiche Aktionen
     public void bestaetigung() {
-        JFrame fenster = new JFrame("Die Reservierung war erfolgreich");
+        JFrame fenster = new JFrame("Die Aktion war erfolgreich");
         fenster.setSize(220, 400);
         fenster.setLocationRelativeTo(null);
 
