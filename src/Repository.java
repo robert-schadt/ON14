@@ -14,13 +14,23 @@ public class Repository {
         kontaktListe.add(Kontakt);
     }
 
-    public void getKontakt(String suche)
+    public void getKontaktperVorname(String sucheVorname)
     {
         for (Iterator<Kontakt> it = kontaktListe.iterator(); it.hasNext();) {
             Kontakt gesuchterKontakt = it.next();
             gesuchterKontakt.getVorname() = new String gesuchterKontaktVorname;
-            if (gesuchterKontaktVorname.equals(suche))
-                System.out.println(ges);
+            if (gesuchterKontaktVorname.equals(sucheVorname))
+                System.out.println(gesuchterKontakt.getKontakt());
+        }
+    }
+
+    public void getKontaktperNachname(String sucheName)
+    {
+        for (Iterator<Kontakt> it = kontaktListe.iterator(); it.hasNext();) {
+            Kontakt gesuchterKontakt = it.next();
+            gesuchterKontakt.getVorname() = new String gesuchterKontaktVorname;
+            if (gesuchterKontaktVorname.equals(sucheName))
+                System.out.println(gesuchterKontakt.getKontakt());
         }
     }
 
