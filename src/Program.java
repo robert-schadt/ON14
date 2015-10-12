@@ -12,7 +12,7 @@ public class Program {
         Controller controller = new Controller();
         View testView = new View(model);
         model.anmelden(testView);
-        frame.setContentPane(testView.fenster);
+        frame.setContentPane(testView.contentPane);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
 
