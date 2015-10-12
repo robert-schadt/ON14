@@ -11,13 +11,16 @@ public class View extends Empfaenger {
 
     private TableModel tableModel;
     private JTable table;
-    private Adressbuch adressbuch;
+    private Model model;
 
-    public View(Adressbuch adressBuch){
-        this.adressbuch = adressBuch;
-        tableModel = new TableModel(this.adressbuch.getKontaktliste());
+
+    public View(Model model){
+        this.model = model;
+        tableModel = model.getAdressListe(); //TODO
         table = new JTable(tableModel);
     }
+
+
 
     //Hauptfenster
     public void erzeugeHauptfenster(){
@@ -31,15 +34,8 @@ public class View extends Empfaenger {
         contentPane.setLayout(new BorderLayout());
         contentPane.setBorder(new EmptyBorder(50, 50, 50, 50));
 
-        JTextField sucheTextField = new JTextField("");
-        contentPane.add(sucheTextField, BorderLayout.NORTH);
-
-        JButton suchButton = new JButton("Suche");
-        contentPane.add(suchButton, BorderLayout.NORTH);
-
         contentPane.add(new JLabel("Suche"), BorderLayout.NORTH);
         JTextField suche = new JTextField("");
-
 
         JScrollPane scrollPane = new JScrollPane(table);
 
