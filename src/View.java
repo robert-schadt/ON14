@@ -44,6 +44,8 @@ public class View extends Empfaenger {
         JButton sucheButton = new JButton("Suche");
         contentPane.add(sucheButton, BorderLayout.NORTH);
 
+
+
         sucheButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -52,7 +54,16 @@ public class View extends Empfaenger {
             }
         });
 
+        JButton kontaktButton = new JButton("Kontakt hinzufügen");
+        contentPane.add(kontaktButton, BorderLayout.SOUTH);
 
+        kontaktButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                kontaktAnlegen();
+            }
+
+        });
 
 
 
@@ -72,13 +83,13 @@ public class View extends Empfaenger {
         tableModel.fireTableDataChanged();
     }
 
-/*    // Anlegen eines neuen Kontaktes. User-ID wird aus dem Vornamen, Nachnamen und Nummer generiert
+// Anlegen eines neuen Kontaktes. User-ID wird aus dem Vornamen, Nachnamen und Nummer generiert
     public void kontaktAnlegen() {
-        JFrame fenster = new JFrame("Bitte legen Sie einen neuen Kontakt an");
-        fenster.setSize(220, 400);
-        fenster.setLocationRelativeTo(null);
+        JFrame fenster2 = new JFrame("Bitte legen Sie einen neuen Kontakt an");
+        fenster2.setSize(220, 400);
+        fenster2.setLocationRelativeTo(null);
 
-        JPanel contentPane = (JPanel) fenster.getContentPane();
+        JPanel contentPane = (JPanel) fenster2.getContentPane();
         contentPane.setBorder(new EmptyBorder(12, 12, 12, 12));
         contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.Y_AXIS));
         contentPane.add(new JLabel("Vorname"));
@@ -113,7 +124,10 @@ public class View extends Empfaenger {
         JButton reg = new JButton("Speichern");
         reg.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                //Adresse + Kontakt anlegen
+                controller.addKontakt(new Kontakt(nachn.getText(), vorn.getText(), tel.getText(), stra.getText(), Integer.parseInt(hnr.getText()), plz.getText(), ort.getText()));
+                bestaetigung();
+                fenster2.dispose();
+
 
             }
         });
@@ -125,18 +139,18 @@ public class View extends Empfaenger {
         weiter.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
-                    fenster.dispose();
+                    fenster2.dispose();
 
             }
         });
 
         contentPane.add(weiter);
 
-        fenster.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        fenster.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         fenster.pack();
         fenster.setVisible(true);
 
-    }*/
+    }
 
 /*    //Einloggen: Der Nutzer gibt seine Zugangsdaten ein. Das Passwort wird geschwärzt.
     public void einloggen() {
@@ -186,13 +200,13 @@ public class View extends Empfaenger {
     }*/
 
 
-/*    // Rückmeldung für erfolgreiche Aktionen
+//  Rückmeldung für erfolgreiche Aktionen
     public void bestaetigung() {
-        JFrame fenster = new JFrame("Die Aktion war erfolgreich");
-        fenster.setSize(220, 400);
-        fenster.setLocationRelativeTo(null);
+        JFrame fenster3 = new JFrame("Die Aktion war erfolgreich");
+        fenster3.setSize(220, 400);
+        fenster3.setLocationRelativeTo(null);
 
-        JPanel contentPane = (JPanel) fenster.getContentPane();
+        JPanel contentPane = (JPanel) fenster3.getContentPane();
         contentPane.setBorder(new EmptyBorder(50, 50, 50, 50));
         contentPane.setLayout(new BorderLayout());
 
@@ -201,15 +215,15 @@ public class View extends Empfaenger {
         ok.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
-                fenster.dispose();
+                fenster3.dispose();
             }
         });
         contentPane.add(ok, BorderLayout.SOUTH);
 
-        fenster.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        fenster.pack();
-        fenster.setVisible(true);
-    }*/
+        fenster3.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        fenster3.pack();
+        fenster3.setVisible(true);
+    }
 
 
 /*    // Meldung für nicht erfolgreiche Aktionen
