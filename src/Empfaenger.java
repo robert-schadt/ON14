@@ -1,9 +1,7 @@
 /**
- * Created by Thomas on 12.10.2015.
+ * Created by Thomas on 12.10.2015. Empfaenger als abstrakte Oberklasse für die View
  */
-public class Empfaenger {
+public abstract class Empfaenger {
 
-    public void empfangen(String nachricht){
-
-    }
+    public abstract void empfangen();
 }
