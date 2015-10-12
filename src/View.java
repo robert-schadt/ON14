@@ -24,15 +24,22 @@ public class View extends Empfaenger {
         JFrame fenster = new JFrame("Willkommen");
 
         //Damit das Fenster nicht mehr oben links in der Ecke aufgeht, sondern zentral auf dem Bildschirm
-        fenster.setPreferredSize(new Dimension(800,800));
+        fenster.setPreferredSize(new Dimension(800, 800));
         fenster.setLocationRelativeTo(null);
 
         JPanel contentPane = (JPanel) fenster.getContentPane();
         contentPane.setLayout(new BorderLayout());
         contentPane.setBorder(new EmptyBorder(50, 50, 50, 50));
 
+        JTextField sucheTextField = new JTextField("");
+        contentPane.add(sucheTextField, BorderLayout.NORTH);
+
+        JButton suchButton = new JButton("Suche");
+        contentPane.add(suchButton, BorderLayout.NORTH);
+
         contentPane.add(new JLabel("Suche"), BorderLayout.NORTH);
         JTextField suche = new JTextField("");
+
 
         JScrollPane scrollPane = new JScrollPane(table);
 
