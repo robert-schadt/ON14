@@ -1,11 +1,18 @@
 /**
  * Created by LickertE on 12.10.2015.
  */
-public class Kontakt {
+public class Kontakt extends Sender {
     private String name;
     private String vorname;
     private String telefonnr;
     private Adresse adresse;
+
+public Kontakt(String name, String vorname, String telefonnr, String strasse, int hausnr, String postleitzahl, String ort) {
+    this.name = name;
+    this.vorname = vorname;
+    this.telefonnr = telefonnr;
+    this.adresse = new Adresse(strasse, hausnr, postleitzahl, ort);
+    }
 
     public String getName() {
         return name;
