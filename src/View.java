@@ -15,9 +15,9 @@ public class View extends Empfaenger {
     private JTable table;
     private Adressbuch adressbuch;
 
-    public View(Adressbuch adressbuch){
-        this.adressbuch = adressbuch;
-        tableModel = this.adressbuch.getKontaktliste();
+    public View(Adressbuch adressBuch){
+        this.adressbuch = adressBuch;
+        tableModel = new TableModel(adressbuch.getKontaktliste());
         table = new JTable(tableModel);
     }
 
