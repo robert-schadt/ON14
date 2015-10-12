@@ -24,15 +24,4 @@ public class Repository {
         }
     }
 
-
-    public ArrayList<Kontakt> getKontaktListe () {
-        kontaktListe.clear();
-        for (int i = 0; i < lineCount; i = i + 2) {
-            Produkt neuesProdukt = new Produkt();
-            neuesProdukt.setName(service.ReadLine(i));
-            neuesProdukt.setPreis(service.ReadLine(i + 1));
-            produktListe.add(neuesProdukt);
-        }
-        return produktListe;
-    }
 }
