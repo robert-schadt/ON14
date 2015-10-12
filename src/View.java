@@ -17,6 +17,9 @@ public class View extends Empfaenger {
         contentPane.setLayout(new BorderLayout());
         contentPane.setBorder(new EmptyBorder(50, 50, 50, 50));
 
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        fenster.pack();
+        fenster.setVisible(true);
 
     }
 
