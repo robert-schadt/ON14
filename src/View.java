@@ -47,29 +47,26 @@ public class View extends Empfaenger {
         contentPane.add(tel);
 
         contentPane.add(new JLabel("Straße"));
-        JTextField tel = new JTextField("");
+        JTextField stra = new JTextField("");
         contentPane.add(stra);
 
         contentPane.add(new JLabel("Hausnummer"));
-        JTextField tel = new JTextField("");
-        contentPane.add(Hnr);
+        JTextField hnr = new JTextField("");
+        contentPane.add(hnr);
 
         contentPane.add(new JLabel("PLZ"));
-        JTextField tel = new JTextField("");
+        JTextField plz = new JTextField("");
         contentPane.add(plz;
 
         contentPane.add(new JLabel("Ort"));
-        JTextField tel = new JTextField("");
+        JTextField ort = new JTextField("");
         contentPane.add(ort);
 
 
         JButton reg = new JButton("Speichern");
         reg.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                gespeichert = true;
-                id.setText("Der Kontakt wurde angelegt:  " + vorn + " " + nachn);
-                pw.setForeground(Color.blue);
-                id.setForeground(Color.blue);
+                //Adresse + Kontakt anlegen
 
             }
         });
@@ -124,7 +121,7 @@ public class View extends Empfaenger {
 
                 if (passwort == true) {
                     fenster.dispose();
-                    Reservierungssystem();
+
 
                 } else {
                     fenster.dispose();
