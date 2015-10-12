@@ -53,7 +53,7 @@ public class View extends Empfaenger {
 
         contentPane.add(new JLabel("PLZ"));
         JTextField tel = new JTextField("");
-        contentPane.add(plz;
+        contentPane.add(plz);
 
         contentPane.add(new JLabel("Ort"));
         JTextField tel = new JTextField("");
