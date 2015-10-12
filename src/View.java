@@ -15,7 +15,8 @@ public class View extends Empfaenger {
     private JTable table;
     private Adressbuch adressbuch;
     private Controller controller;
-    private JFrame fenster = new JFrame("Willkommen");
+    public JFrame fenster = new JFrame("Willkommen");
+    public JPanel contentPane = (JPanel) fenster.getContentPane();
 
     public View(Adressbuch adressBuch, Controller controller){
         this.adressbuch = adressBuch;
@@ -33,7 +34,7 @@ public class View extends Empfaenger {
         fenster.setPreferredSize(new Dimension(800, 800));
         fenster.setLocationRelativeTo(null);
 
-        JPanel contentPane = (JPanel) fenster.getContentPane();
+
         contentPane.setLayout(new BorderLayout());
         contentPane.setBorder(new EmptyBorder(50, 50, 50, 50));
 
