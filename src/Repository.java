@@ -27,8 +27,9 @@ public class Repository {
             if (gesuchterKontakt.getVorname().toLowerCase().startsWith(sucheVorname.toLowerCase()))
             { aktuellekontaktListe.add(gesuchterKontakt);
             }
-            return aktuellekontaktListe;
+
         }
+        return aktuellekontaktListe;
     }
 
     public ArrayList<Kontakt> getKontaktperNachname(String sucheName)
@@ -40,8 +41,9 @@ public class Repository {
             if (gesuchterKontakt.getVorname().toLowerCase().startsWith(sucheName.toLowerCase()))
             { aktuellekontaktListe.add(gesuchterKontakt);
             }
-            return aktuellekontaktListe;
+
         }
+        return aktuellekontaktListe;
     }
 
 
