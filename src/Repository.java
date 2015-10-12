@@ -9,17 +9,17 @@ public class Repository {
         kontaktListe = new ArrayList<Kontakt>();
     }
 
-    public void addKontakte(Kontakt)
+    public void addKontakte(Kontakt newKontakt)
     {
-        kontaktListe.add(Kontakt);
+        kontaktListe.add(newKontakt);
+        System.out.println("Der Kontakt " + newKontakt.getVorname() + ", " + newKontakt.getName() + " wurde erfolgreich hinzugefügt");
     }
 
     public void getKontaktperVorname(String sucheVorname)
     {
         for (Iterator<Kontakt> it = kontaktListe.iterator(); it.hasNext();) {
             Kontakt gesuchterKontakt = it.next();
-            gesuchterKontakt.getVorname() = new String gesuchterKontaktVorname;
-            if (gesuchterKontaktVorname.equals(sucheVorname))
+            if (gesuchterKontakt.getVorname().equals(sucheVorname))
                 System.out.println(gesuchterKontakt.getKontakt());
         }
     }
@@ -28,21 +28,17 @@ public class Repository {
     {
         for (Iterator<Kontakt> it = kontaktListe.iterator(); it.hasNext();) {
             Kontakt gesuchterKontakt = it.next();
-            gesuchterKontakt.getVorname() = new String gesuchterKontaktVorname;
-            if (gesuchterKontaktVorname.equals(sucheName))
+            if (gesuchterKontakt.getName().equals(sucheName))
                 System.out.println(gesuchterKontakt.getKontakt());
         }
     }
 
 
     public ArrayList<Kontakt> getKontaktListe () {
-        kontaktListe.clear();
-        for (int i = 0; i < lineCount; i = i + 2) {
-            Produkt neuesProdukt = new Produkt();
-            neuesProdukt.setName(service.ReadLine(i));
-            neuesProdukt.setPreis(service.ReadLine(i + 1));
-            produktListe.add(neuesProdukt);
+
+        for (Iterator<Kontakt> it = kontaktListe.iterator(); it.hasNext();) {
+            Kontakt gesuchterKontakt = it.next();
+                System.out.println(gesuchterKontakt.getKontakt());
         }
-        return produktListe;
     }
 }
